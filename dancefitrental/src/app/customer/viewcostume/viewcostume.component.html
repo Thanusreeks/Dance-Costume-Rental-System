@@ -1,0 +1,23 @@
+<div class="container ">
+  <div class="col text-center mb-5">
+    <h1 class="display-4 font-weight-bolder"></h1>
+  <form [formGroup]="viewcostumeform">
+    <input type="hidden" formControlName="categoryid" />
+    <div class="row" style=" margin-top: 112px;">
+      <div class="col-md-4" *ngFor="let data of CostumeArray">
+        <div class="card" style="width: 18rem;">
+          <img style="width:287px;height: 277px;" src="http://localhost:3000/images/{{data.costumeimg}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{data.costumename}}</h5>
+            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+            <p class="card-text">{{data.costumedes}}</p>
+            <p class="card-text">Price per day: <i>{{data.price}}</i></p>
+            <p class="card-text">Stock: <i>{{data.stock}}</i></p>
+
+            <a [routerLink]="['/customermaster/viewmorecostume',data.costumeid]" class="btn mr-2"><i class="fas fa-link"></i> View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

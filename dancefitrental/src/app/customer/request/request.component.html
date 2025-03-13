@@ -1,0 +1,107 @@
+<!-- Shop Detail Start -->
+<form [formGroup]="requestform" enctype="multipart/form-data">
+ 
+    <div class="container-fluid py-5" *ngFor="let data of CostumeArray">
+        <div class="row px-xl-5" style=" margin-top: 92px;margin-left: 252px;">
+            <div class="col-lg-5 pb-5">
+                <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner border">
+
+                        <div class="carousel-item active" >
+                            <img class="w-100 h-100" src="http://localhost:3000/images/{{data.costumeimg}}" alt="Image">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-7 pb-5">
+                <div>
+
+                    <h3 class="font-weight-semi-bold mb-4">{{data.costumename}}</h3>
+                </div>
+
+
+                <p class="mb-4" formControlName="amount">Price Per Day:{{data.price}}</p>
+                
+                <div>
+                    Required Date :<input type="date" formControlName="fromdate" [min]="minDate">
+                </div>
+                <br>
+                <div>
+                    Return Date:<input type="date" formControlName="todate" (change)="onChangedate()" [min]="minDate">
+                </div>
+                <div>
+                   <br> No.of.Days:<input type="text" formControlName="noofdays"/>
+                </div>
+
+
+
+                <br>
+                <td>
+                    <button (click)="displaySizeChart()">View Size Chart</button>
+                </td>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4 col-6">
+                        <label class="mb-2">Size</label>
+                        <div>
+                            <select class="form-select border border-secondary" formControlName="size"
+                                style="height: 49px;width: 157px;">
+                                <option value="">------Select-------</option>
+                                <option>1-2 yrs</option>
+
+                                <option>2-3 yrs</option>
+                                <option>3-4 yrs</option>
+                                <option>4-5 yrs</option>
+                                <option>5-6 yrs</option>
+                                <option>6-7 yrs</option>
+                                <option>7-8 yrs</option>
+                                <option>8-9 yrs</option>
+                                <option>9-11 yrs</option>
+                                <option>11-13 yrs</option>
+                                <option>13-15 yrs</option>
+                                <option>15-18 yrs</option>
+                            </select>
+                        </div>
+                    </div>
+
+                  
+
+                 <div class="col-md-4 col-6 mb-3">
+                        <label class="mb-2 d-block">Quantity</label>
+                        <div class="input-group mb-3" style="width: 170px;">
+                            <button class="btn btn-white border border-secondary px-3" type="button" id="decrementBtn" (click)="decrementQuantity()">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                           
+                            <input type="hidden" formControlName="costumeid">
+                            <input type="hidden" formControlName="shopid">
+                            <input type="text" class="form-control text-center border border-secondary"
+                                formControlName="count" value="1" (change)="onChange()">
+                            <button class="btn btn-white border border-secondary px-3" type="button" id="incrementBtn" (click)="incrementQuantity()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            
+                        </div>
+                    </div> 
+
+
+
+                    
+                </div>
+                <div>
+                    Total Amount:<input type="text" formControlName="totalamount">
+                </div>
+                <br>
+
+
+              
+                <button class="btn btn-primary px-3" type="submit" (click)="Onsubmit()"><i
+                        ></i> REQUEST</button>
+            </div>
+        </div>
+
+    </div>
+</form>

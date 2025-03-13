@@ -1,0 +1,36 @@
+<div class="col-md-10 grid-margin stretch-card" style="margin-left: 320px;margin-top: 120px;">
+    <div class="card" >
+        <div class="card-body">
+            <h4 class="card-title" style="margin-left: 250px;">Update Location Details</h4>
+            <!-- <p class="card-description">
+                Location
+            <Details></Details>
+            </p> -->
+            <br>
+            <form [formGroup]="EditLocationFormGroup">
+                <div class="form-outline mb-4" >
+                    <label class="form-label" for="form3Example1cg" style="width: 150px;height: 17px;" >District Name</label>
+
+                    <select class="select" formControlName="districtid" style="height: 32px; width: 433px;" readonly>
+                        <!-- <option selected value="">Select</option> -->
+                        <option *ngFor="let data of DistrictArray" value="{{data.districtid}}" >
+                          {{data.districtname}}
+                        </option>
+                       
+                       
+                      </select>
+                </div>
+                <input type="hidden" formControlName="locationid" />
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-2 col-form-label"  style="width: 150px;height: 17px;">Location name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" style="border: 1px solid #06090b;width: 428px;margin-left: -69px;"  placeholder="Enter the Location Name" formControlName="locationname" placeholder="Your Location">
+                    </div>
+                </div>
+              
+                <button type="submit" class="btn btn-primary mr-2" (click)="onSubmit()" style="margin-left: 262px;">Submit</button>
+               
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container mt-5" style="margin-bottom: 46px;" >
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Shop Information</h3>
+                    <div *ngFor="let data of ShopArray">
+                        <div class="mb-3">
+                            <label for="shopName" class="form-label">Shop Name</label>
+                            <input type="text" class="form-control" id="shopName" value="{{data.shopname}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactNo" class="form-label">Contact No.</label>
+                            <input type="text" class="form-control" id="contactNo" value="{{data.shopcontact}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" value="{{data.shopemail}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="license" class="form-label">License</label>
+                            <input type="text" class="form-control" id="license" value="{{data.licenseno}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="district" class="form-label">District</label>
+                            <input type="text" class="form-control" id="district" value="{{data.districtname}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" value="{{data.locationname}}" readonly>
+                        </div>
+                        <div class="text-end">
+                            <a [routerLink]="['/shopmaster/shopedit', data.shopid]">
+                                <button class="btn btn-primary" style=" margin-left: 324px;">Edit Profile</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="col-md-6 grid-margin stretch-card" style="margin-left: 320px;">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Category Details</h4>
+            <!-- <p class="card-description">
+                Category
+            <Details></Details>
+            </p> -->
+            <form [formGroup]="EditCategoryFormGroup">
+                <input type="hidden" formControlName="Categoryid" />
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-
+    label">Category Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="categoryname" placeholder="Category Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-
+    label">Description</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" formControlName="catdescription" id="exampleInputEmail2"
+                            placeholder="Category Description">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-
+    label">Image</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" formControlName="catimage" id="exampleInputEmail2"
+                        (change)="selectFile($event)">
+                    </div>
+                    <div *ngFor="let data of CategoryArray">
+
+                        <img src="http://localhost:3000/images/{{data.catimage}}"
+                        alt="" width="200" height="200">
+                        </div>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2" (click)="onSubmit()" style="margin-left: 262px;">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+</div>

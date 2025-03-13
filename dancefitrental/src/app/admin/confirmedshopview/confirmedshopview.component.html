@@ -1,0 +1,59 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Shop Details</h1>
+            <!-- <p class="card-description">
+                Add class <code>.table-striped</code>
+            </p> -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            
+                            <th>
+                                Sl.no
+                            </th>
+                            <th>
+                                Shop Name
+                            </th>
+                            <th>
+                                District
+                            </th>
+                            <th>
+                                Location
+                            </th>
+                            <th>
+                                Contact No.
+                            </th>
+                            <th>
+                                Shop Email
+                            </th>
+                            <th>
+                                Shop License No.
+                            </th>
+                            <th>
+                                Registration Date
+                            </th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of ShopArray,let i=index">
+                           <td class="py-1"> 
+                            {{i+1}}
+                            </td>
+                            <td>{{data.shopname}}</td>
+                            <td>{{data.districtname}}</td>
+                            <td>{{data.locationname}}</td>
+                            <td>{{data.shopcontact}}</td>
+                            <td>{{data.shopemail}}</td>
+                            <td>{{data.licenseno}}</td>
+                            <td>{{data.shopregdate}}</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

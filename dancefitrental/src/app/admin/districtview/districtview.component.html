@@ -1,0 +1,33 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">DISTRICT VIEW</h4>
+            <!-- <p class="card-description">
+                Add class <code>.table-striped</code>
+            </p> -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            
+                            <th> # </th>
+                            <th> District Name</th>
+                            <th> Edit </th>
+                            <th> Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of DistrictArray,let i=index">
+                           <td class="py-1"> 
+                            {{i+1}}
+                            </td>
+                            <td>{{data.districtname}}</td>
+                           <td><a href="">Edit</a></td>
+                           <td><a href="">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="col-md-6 grid-margin stretch-card" style="margin-left: 425px;margin-bottom: 38px;">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4">Costume Details</h4>
+            <!-- <p class="card-description">
+                Category
+            <Details></Details>
+            </p> -->
+            <form [formGroup]="EditCostumeFormGroup">
+                <input type="hidden" formControlName="costumeid" />
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-
+    label">Costume Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="costumename" placeholder="Enter the Costume Name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-
+    label">Category Name</label>
+                    <div class="col-sm-9">
+                    <select class="select" formControlName="categoryid" style="height: 38px;   width: 695px;">
+                        <option value="">-------Select the Category-------</option>
+                        <option *ngFor="let data of CategoryArray" value="{{data.categoryid}}">
+                          {{data.categoryname}}
+                        </option>
+                       
+                       
+                    </select>
+                </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-
+    label">Description</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="costumedes" id="exampleInputEmail2"
+                            placeholder="Enter the Costume Description">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-
+    label">Price Per Day</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="price" id="exampleInputEmail2"
+                            placeholder="Enter the Costume Price">
+                    </div>
+                </div>
+                <!-- <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-
+    label">Stock</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="stock" id="exampleInputEmail2"
+                            placeholder="Enter the Stock">
+                    </div>
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-
+    label">Image</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" formControlName="costumeimg" id="exampleInputEmail2"
+                        (change)="selectFile($event)">
+                    </div>
+                    <div *ngFor="let data of CostumeArray">
+
+                        <img src="http://localhost:3000/images/{{data.costumeimg}}"
+                        alt="" width="150" height="150">
+                        </div>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2" (click)="onSubmit()" style="margin-left: 424px;">Submit</button>
+                <!-- <button class="btn btn-primary mr-2">Cancel</button> -->
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="col-md-6 grid-margin stretch-card" style="margin-left: 415px;margin-bottom: 46px;">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center">Shop Details</h4>
+
+            <form [formGroup]="EditShopprofileFormGroup">
+                <input type="hidden" formControlName="shopid" />
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Shop Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="shopname">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">District Name</label>
+                    <div class="col-sm-9">
+                        <select class="select form-control" formControlName="districtid"  (change)="onChange()" readonly>
+                            <!-- <option value="">Select</option> -->
+                            <option *ngFor="let data of ShopArray" [value]="data.districtid">{{ data.districtname }}</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Location Name</label>
+                    <div class="col-sm-9">
+                        <select class="select form-control" formControlName="locationid" readonly>
+                            <!-- <option selected value="">Select</option> -->
+                            <option *ngFor="let data of ShopArray" [value]="data.locationid">{{ data.locationname }}</option>
+                        </select>
+                    </div>
+                </div>
+                
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Contact</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="shopcontact" id="exampleInputEmail2">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" formControlName="shopemail" id="exampleInputEmail2">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">License No</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="licenseno" id="exampleInputEmail2">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mr-2" (click)="onSubmit()">Submit</button>
+                    <button type="button" class="btn btn-primary mr-2">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<section class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mb-5">
+        <h1 class="display-4 font-weight-bolder"></h1>
+        <p class="lead text-dark">Category View</p>
+      </div>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let data of CategoryArray; let i = index">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-dark card-has-bg click-col"
+            style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+            <img class="card-img d-none" src="" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <h4 class="card-title mt-0 "><a class="text-dark">{{data.categoryname}}</a></h4>
+                <h6> {{data.catdescription}}</h6>
+                <div>
+                  <a [routerLink]="['/customermaster/viewcostume',data.categoryid]">
+                    <img style="width:277px;height: 277px;" src="http://localhost:3000/images/{{data.catimage}}" >
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="media">
+                  <!-- You can add additional content here if needed -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add clearfix to break to the next row after every 3 cards -->
+        <div *ngIf="(i + 1) % 3 === 0" class="clearfix d-md-none d-lg-none"></div>
+      </ng-container>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+
+<form [formGroup]="payviewform">
+
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Payment Details</h4>
+                <!-- <p class="card-description">
+                    Add class <code>.table-striped</code>
+                </p> -->
+                <!-- <form >
+                    <input type="hidden" formControlName="loginid" /> -->
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+    
+                                <th> # </th>
+                                <th> Customer Name</th>
+                                <th> Costume Name</th>
+                                <th> Advance Amount</th>
+
+                                <th>Total Amount </th>
+    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of PaymentArray,let i=index">
+                                <td class="py-1">
+                                    {{i+1}}
+                                </td>
+                                <td>{{data.customername}}</td>
+                               <td>{{data.costumename}}</td>
+                                <td>{{data.advance}}</td>
+                                <td>{{data.totalamount}}</td>
+    
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                   
+                </div>
+            <!-- </form> -->
+            </div>
+        </div>
+    </div>
+    </form>

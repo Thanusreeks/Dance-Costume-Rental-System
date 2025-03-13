@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Colorlib Alotan Barber Shop Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <link rel="stylesheet" href="/assets/customer/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/customer/css/animate.css">
+    <link rel="stylesheet" href="/assets/customer/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/customer/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/assets/customer/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/customer/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/customer/fonts/flaticon/font/flaticon.css">
+    
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="/assets/customer/css/style.css">
+  </head>
+  <body>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Dance Fit Rental</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-6 pl-0">
+              <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/customermaster/customerhome']">Home</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Activity</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="hairstyle.html">Crew Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
+                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                </div>
+ 
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/customermaster/customerprofile']">My Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/customermaster/customerpassword']">Change Password</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/customermaster/viewcategory']">Costumes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/customermaster/confirmedview']">Accepted Request</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/guestmaster/guestlogin']" (click)="Logout()">Logout</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+<router-outlet></router-outlet>
+ 
+   
+<footer class="site-footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <h3 class="mb-4">About</h3>
+          <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quod!</p>
+          <ul class="list-unstyled ">
+            <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span class="">34 Street Name, City Name Here, United States</span></li>
+            <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span class="">+1 242 4942 290</span></li>
+            <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span class="">info@yourdomain.com</span></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h3 class="mb-4">Links</h3>
+          <ul class="list-unstyled ">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Hairstyle</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="mb-4">Latest Blog</h3>
+          <ul class="list-unstyled blog-entry-footer">
+            <li><a href="#">
+              <span class="post-meta">March 20, 2018</span>
+              <h3>7 Best Destination in The World</h3></a>
+            </li>
+            <li><a href="#">
+              <span class="post-meta">March 20, 2018</span>
+              <h3>4 Hour Work Week And The Rest Is Travel</h3></a>
+            </li>
+            <li><a href="#">
+              <span class="post-meta">March 20, 2018</span>
+              <h3>Why You Should Travel Today</h3></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Connect</h3>
+          <p>
+            <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-7 text-center">
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END footer -->
+  
+  <!-- loader -->
+  <!-- <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div> -->
+
+</body>
+</html>

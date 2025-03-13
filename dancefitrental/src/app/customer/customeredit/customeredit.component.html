@@ -1,0 +1,57 @@
+<div class="col-md-6 grid-margin stretch-card" style="margin-left: 360px;">
+    <div class="card" style="margin-top: 100px;margin-bottom: 100px;">
+        <div class="card-body">
+            <h3 class="card-title text-center mb-4">Customer Details</h3>
+
+            <form [formGroup]="EditCostumeFormGroup">
+                <input type="hidden" formControlName="customerid" />
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Customer Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="customername" placeholder="Enter the Customer Name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">District Name</label>
+                    <div class="col-sm-9">
+                        <select class="select form-control" formControlName="districtid" (change)="onChange()" readonly>
+                            <!-- <option value="">-------Select the District-------</option> -->
+                            <option *ngFor="let data of CustomerArray" [value]="data.districtid">{{data.districtname}}</option>
+                           
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Location Name</label>
+                    <div class="col-sm-9">
+                        <select class="select form-control" formControlName="locationid" readonly>
+                            <!-- <option selected value="">-------Select the Location-------</option> -->
+                            <option *ngFor="let data of CustomerArray" [value]= "data.locationid" >{{data.locationname}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Contact</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="customercontact" placeholder="Enter the Customer Contact">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" formControlName="customeremail" placeholder="Enter the Customer Email">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mr-2" (click)="onSubmit()">Submit</button>
+                    <button class="btn btn-primary mr-2">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

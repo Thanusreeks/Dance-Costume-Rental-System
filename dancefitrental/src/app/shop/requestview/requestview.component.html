@@ -1,0 +1,67 @@
+
+<form [formGroup]="reqviewform">
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Request View</h4>
+            <!-- <p class="card-description">
+                Add class <code>.table-striped</code>
+            </p> -->
+            <!-- <form >
+                <input type="hidden" formControlName="loginid" /> -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+
+                            <th> # </th>
+                            <th> Customer Name</th>
+                            <th> Costume Name</th>
+                            <th>From Date</th>
+                            <th> To Date</th>
+                            <th> Image </th>
+                            <th> Quantity </th>
+                            <th> Size</th>
+                            <th> Status</th>
+
+                            <th>Total Amount </th>
+                            <th> Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of RequestArray,let i=index">
+                            <td class="py-1">
+                                {{i+1}}
+                            </td>
+                            <td>{{data.customername}}</td>
+                           <td>{{data.costumename}}</td>
+                            <td>{{data.fromdate}}</td>
+                            <td>{{data.todate}}</td>
+                            <td class="text-danger"><img style="width:100px;height:100px;"
+                                src="http://localhost:3000/images/{{data.costumeimg}}">
+                        </td> 
+                            <td>{{data.count}}</td>
+                            <td>{{data.size}}</td>
+                            <td>{{data.reqstatus}}</td>
+
+                            <td>{{data.totalamount}}</td>
+
+                            <td>
+                                <button type="button"  (click)="confirmrequest(data.requestid)"> Confirm</button>
+                            </td> 
+                            <td>
+                                <button type="button"  (click)="Rejectrequest(data.requestid)"> Reject</button>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </div>
+        <!-- </form> -->
+        </div>
+    </div>
+</div>
+</form>

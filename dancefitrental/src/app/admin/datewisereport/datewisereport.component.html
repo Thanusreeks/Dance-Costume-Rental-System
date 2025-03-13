@@ -1,0 +1,50 @@
+<form [formGroup]="datewiseform">
+    <div class="row" style="padding-top: 200px;padding-left: 461px;">
+    <div class="col-md-3">
+    Start Date <input type="date" formControlName="startdate"
+    style="width: 106px;height:40px;">
+    </div>
+    <div class="col-md-3">
+    EndDate <input type="date" formControlName="enddate" style="width:
+    106px;height:40px;">
+    </div>
+    </div>
+    <br>
+
+    <div class="col-md-3" style="margin-left: 633px;">
+      <button type="button" (click)="OnSubmit()" style="width: 100px;height:40px; background-color: blue;border-radius:30px;color:white">Submit</button>
+      </div>
+    </form>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-
+    awesome.min.css" rel="stylesheet">
+    <div class="container bootdey">
+    <div class="row bootstrap snippets">
+    <div class="clearfix visible-sm"></div>
+    <!-- Cart -->
+    <div class="col-lg-9 col-md-9 col-sm-12">
+    <div class="col-lg-12 col-sm-12"><br><br>
+    <span class="title" style="padding-left: 220px;font-size:20px;font-weight:bold">BOOKING BETWEEN TWO DATES</span>
+    </div>
+    <div class="col-lg-12 col-sm-12 hero-feature">
+    <div class="table-responsive">
+        <table class="table table-bordered tbl-cart">
+            <thead>
+              <tr>
+                <th>Shop Name</th>
+                <th>No. of Requests</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of RequestArray">
+                <td>{{ data.shopname }}</td>
+                <td>{{ data.request_count }}</td> <!-- Assuming the request count field is named request_count -->
+              </tr>
+            </tbody>
+          
+          
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
